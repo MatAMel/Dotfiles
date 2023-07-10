@@ -1,6 +1,9 @@
 # Ignore everything
 *
 
+# But don't ignore directories, so we can recurse into them
+!*/
+
 # But not these files...
 !.gitignore
 !.zshrc
@@ -8,4 +11,15 @@
 !.tmux.conf
 !.gdbinit
 !.vimrc
-!.oh-my-zsh/*
+
+# Don't ignore everything in the specific directory
+!.oh-my-zsh/**/*
+!.vim/**/*
+
+
+.local/
+.vscode/
+.zplug/
+ctf/
+files/
+
