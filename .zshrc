@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -9,8 +9,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-#ZSH_THEME="garyblessington"
-
+#ZSH_THEME="miloshadzic"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -72,15 +72,13 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-)
+        zsh-syntax-highlighting
+        zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -104,5 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PWNDBG_VENV_WARNING=0
 alias cpy="xclip -selection clipboard"
-alias 7z="7za"
+alias 7z="7zz"

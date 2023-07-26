@@ -117,6 +117,6 @@ if ! shopt -oq posix; then
 fi
 
 
-export PS1="\[\033[38;5;46m\]\u\[$(tput sgr0)\]\[\033[38;5;196m\]@\[$(tput sgr0)\]\[\033[38;5;46m\]\W\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
 
-export PWNDBG_VENV_WARNING=0
+
+
