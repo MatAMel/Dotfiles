@@ -1,9 +1,9 @@
 # Ignore everything
-*
+/*
 
 # But not these files...
 !.gitignore
 !.zshrc
 !.vimrc
 !.tmux.conf
-!.github/README.md
+!.github/
