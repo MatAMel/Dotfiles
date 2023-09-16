@@ -1,4 +1,4 @@
-### Dotfiles
+# How to use Dotfiles repo
 
 [Source](https://askubuntu.com/questions/1316229/is-it-bad-practice-to-git-init-in-the-home-directory-to-keep-track-of-dot-files)
 
@@ -38,4 +38,22 @@ dotfiles commit -m 'Add .bash_aliases'
 ---
 
 Now with the use of a `bare` repository, there is no `.git` directory in your `$HOME` directory; so it does not introduce any surprises while working with `git`.
+
+
+# Dependencies
+### .tmux.conf plugins install
+
+##### tmux-yank
+```
+mkdir -p ~/.tmux/yank 
+git clone https://github.com/tmux-plugins/tmux-yank ~/.tmux/yank
+```
+
+
+### .zshrc installs
+
+##### XClip (for copying)
+```
+sudo apt install xclip
+```
 
