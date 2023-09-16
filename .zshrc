@@ -259,16 +259,19 @@ if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
-export PWNDBG_VENV_WARNING=0
-alias cpy="xclip -selection clipboard"
-alias 7z="7za"
-export ZSH_AUTOSUGGEST_MANUAL_REBIND="1"
 
-# Dotfiles git repo
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+#######################################################################
+########################## CUSTOM CONFIG ##############################
+#######################################################################
 
-#### KALI ####
-export PATH="/usr/local/volatility3:$PATH"
+export PWNDBG_VENV_WARNING=0 # TURN OFF PWNDBG WARNING
+export ZSH_AUTOSUGGEST_MANUAL_REBIND="1" # MAKE ZSH FASTER
 
-#### WSL ####
-#export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib"
+################### ALIASES ###################
+alias cpy="xclip -selection clipboard" # COPY TO CLIPBOARD
+alias 7z="7za" # 7ZIP
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" # DOTFILES 
+
+################### PATH ###################
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft VS Code/bin" # ADDS VSCODE TO PATH (WSL2)
+export PATH="/usr/local/volatility3:$PATH" # VOLATILITY 3
