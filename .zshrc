@@ -263,4 +263,12 @@ export PWNDBG_VENV_WARNING=0
 alias cpy="xclip -selection clipboard"
 alias 7z="7za"
 export ZSH_AUTOSUGGEST_MANUAL_REBIND="1"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib"
+
+# Dotfiles git repo
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+#### KALI ####
+export PATH="/usr/local/volatility3:$PATH"
+
+#### WSL ####
+#export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib"
