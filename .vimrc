@@ -1,4 +1,5 @@
 syntax on
+filetype on
 
 set number	 
 set linebreak
