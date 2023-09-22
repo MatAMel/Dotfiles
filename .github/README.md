@@ -12,25 +12,31 @@ git init --bare .dotfiles
 > The `--bare` flag creates a repository that doesn’t have a working directory, making it impossible to edit files and commit changes in that repository.
 
 Create an alias to manage the repository we just created:
-
 ```
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 ```
 
-Ignore the files that are not being tracked from being shown up in `git status`:
+Change branch name to main
+```
+dotfiles branch -m main
+```
 
+Ignore the files that are not being tracked from being shown up in `git status`:
 ```
 dotfiles config --local status.showUntrackedFiles no
 ```
 
-Add your desired files:
+Add remote github repo
+```
+dotfiles remote add https://github.com/MatAMel/Dotfiles.git
+```
 
+Add your desired files:
 ```
 dotfiles add .bash_aliases
 ```
 
 Commit.
-
 ```
 dotfiles commit -m 'Add .bash_aliases'
 ```
