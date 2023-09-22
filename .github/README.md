@@ -31,6 +31,11 @@ Add remote github repo
 dotfiles remote add https://github.com/MatAMel/Dotfiles.git
 ```
 
+Pull remote
+```
+dotfiles pull origin main
+```
+
 Add your desired files:
 ```
 dotfiles add .bash_aliases
