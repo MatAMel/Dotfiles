@@ -2,7 +2,7 @@
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
 setopt autocd              # change directory just by typing its name
-setopt correct            # auto correct mistakes
+#setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
 setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
 setopt nonomatch           # hide error message if there is no match for the pattern
@@ -11,23 +11,25 @@ setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
 setopt norcs
 
+unsetopt correct
+
 WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
-# configure key keybindings
-bindkey -e                                        # emacs key bindings
-bindkey ' ' magic-space                           # do history expansion on space
-bindkey '^U' backward-kill-line                   # ctrl + U
-bindkey '^[[3;5~' kill-word                       # ctrl + Supr
-bindkey '^[[3~' delete-char                       # delete
+# # configure key keybindings
+# bindkey -e                                        # emacs key bindings
+# bindkey ' ' magic-space                           # do history expansion on space
+# bindkey '^U' backward-kill-line                   # ctrl + U
+# bindkey '^[[3;5~' kill-word                       # ctrl + Supr
+# bindkey '^[[3~' delete-char                       # delete
 bindkey '^[[1;5C' forward-word                    # ctrl + ->
 bindkey '^[[1;5D' backward-word                   # ctrl + <-
-bindkey '^[[5~' beginning-of-buffer-or-history    # page up
-bindkey '^[[6~' end-of-buffer-or-history          # page down
-bindkey '^[[H' beginning-of-line                  # home
-bindkey '^[[F' end-of-line                        # end
+# bindkey '^[[5~' beginning-of-buffer-or-history    # page up
+# bindkey '^[[6~' end-of-buffer-or-history          # page down
+# bindkey '^[[H' beginning-of-line                  # home
+# bindkey '^[[F' end-of-line                        # end
 bindkey '^[[Z' undo                               # shift + tab undo last action
 
 # enable completion features
@@ -273,5 +275,5 @@ alias 7z="7za" # 7ZIP
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" # DOTFILES 
 
 ################### PATH ###################
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft VS Code/bin" # ADDS VSCODE TO PATH (WSL2)
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Windows/System32" # ADDS VSCODE TO PATH (WSL2)
 export PATH="/usr/local/volatility3:$PATH" # VOLATILITY 3
