@@ -277,3 +277,4 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" # DOT
 ################### PATH ###################
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Windows/System32" # ADDS VSCODE TO PATH (WSL2)
 export PATH="/usr/local/volatility3:$PATH" # VOLATILITY 3
+export PATH="/home/kali/.local/bin:$PATH"
