@@ -28,7 +28,7 @@ dotfiles config --local status.showUntrackedFiles no
 
 Add remote github repo
 ```
-dotfiles remote add https://github.com/MatAMel/Dotfiles.git
+dotfiles remote add origin https://github.com/MatAMel/Dotfiles.git
 ```
 
 Pull remote
