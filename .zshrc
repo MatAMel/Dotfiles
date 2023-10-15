@@ -273,8 +273,17 @@ export ZSH_AUTOSUGGEST_MANUAL_REBIND="1" # MAKE ZSH FASTER
 alias cpy="xclip -selection clipboard" # COPY TO CLIPBOARD
 alias 7z="7za" # 7ZIP
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" # DOTFILES 
+alias cme="crackmapexec"
 
 ################### PATH ###################
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Windows/System32" # ADDS VSCODE TO PATH (WSL2)
 export PATH="/usr/local/volatility3:$PATH" # VOLATILITY 3
 export PATH="/home/kali/.local/bin:$PATH"
+
+
+################### OTHER #####################
+export TOOLS="/home/kali/ctf/htb/tools"
+
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
