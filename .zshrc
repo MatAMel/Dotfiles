@@ -268,17 +268,23 @@ fi
 
 export PWNDBG_VENV_WARNING=0 # TURN OFF PWNDBG WARNING
 export ZSH_AUTOSUGGEST_MANUAL_REBIND="1" # MAKE ZSH FASTER
+export downloads="/mnt/c/Users/Mathias/Downloads/Firefox"
+export rockyou=/usr/share/wordlists/rockyou.txt
 
 ################### ALIASES ###################
 alias cpy="xclip -selection clipboard" # COPY TO CLIPBOARD
 alias 7z="7za" # 7ZIP
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" # DOTFILES 
 alias cme="crackmapexec"
+alias reload="source /home/kali/.zshrc"
+alias pwninit='pwninit --template-path ~/.config/pwninit_template.py'
+alias htbvpn='sudo openvpn /home/kali/ctf/htb/htb_EU_tcp.ovpn'
 
 ################### PATH ###################
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Windows/System32" # ADDS VSCODE TO PATH (WSL2)
 export PATH="/usr/local/volatility3:$PATH" # VOLATILITY 3
 export PATH="/home/kali/.local/bin:$PATH"
+export PATH="/home/kali/.cargo/bin:$PATH"
 
 
 ################### OTHER #####################
