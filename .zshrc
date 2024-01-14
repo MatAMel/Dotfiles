@@ -293,3 +293,6 @@ export TOOLS="/home/kali/ctf/htb/tools"
 #export PYENV_ROOT="$HOME/.pyenv"
 #command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init -)"
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
