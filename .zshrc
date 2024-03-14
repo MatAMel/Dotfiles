@@ -296,3 +296,6 @@ export TOOLS="/home/kali/ctf/htb/tools"
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+# fix time in tmux
+#sudo ntpdate ntp.ubuntu.com 1>/dev/null
