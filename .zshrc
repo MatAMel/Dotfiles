@@ -277,7 +277,7 @@ alias 7z="7za" # 7ZIP
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" # DOTFILES 
 alias cme="crackmapexec"
 alias reload="source /home/kali/.zshrc"
-alias pwninit='pwninit --template-path ~/.config/pwninit_template.py'
+alias pwninit='pwninit --template-path ~/.config/pwninit_template.py; libcname=$(ls libc*); python3 -c "from pwnlib.libcdb import unstrip_libc; unstrip_libc('\''$libcname'\'')"'
 alias htbvpn='sudo openvpn /home/kali/ctf/htb/htb_EU_tcp.ovpn'
 
 ################### PATH ###################
