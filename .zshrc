@@ -18,18 +18,8 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
-# # configure key keybindings
-# bindkey -e                                        # emacs key bindings
-# bindkey ' ' magic-space                           # do history expansion on space
-# bindkey '^U' backward-kill-line                   # ctrl + U
-# bindkey '^[[3;5~' kill-word                       # ctrl + Supr
-# bindkey '^[[3~' delete-char                       # delete
 bindkey '^[[1;5C' forward-word                    # ctrl + ->
 bindkey '^[[1;5D' backward-word                   # ctrl + <-
-# bindkey '^[[5~' beginning-of-buffer-or-history    # page up
-# bindkey '^[[6~' end-of-buffer-or-history          # page down
-# bindkey '^[[H' beginning-of-line                  # home
-# bindkey '^[[F' end-of-line                        # end
 bindkey '^[[Z' undo                               # shift + tab undo last action
 
 # enable completion features
@@ -51,8 +41,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # History configurations
 HISTFILE=~/.zsh_history
-HISTSIZE=2000
-SAVEHIST=2000
+HISTSIZE=20000
+SAVEHIST=20000
 setopt appendhistory
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore duplicated commands history list
@@ -249,18 +239,6 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-# enable auto-suggestions based on the history
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    # change suggestion color
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
-fi
-
-# enable command-not-found if installed
-if [ -f /etc/zsh_command_not_found ]; then
-    . /etc/zsh_command_not_found
-fi
-
 
 #######################################################################
 ########################## CUSTOM CONFIG ##############################
@@ -268,34 +246,20 @@ fi
 
 export PWNDBG_VENV_WARNING=0 # TURN OFF PWNDBG WARNING
 export ZSH_AUTOSUGGEST_MANUAL_REBIND="1" # MAKE ZSH FASTER
-export downloads="/mnt/c/Users/Mathias/Downloads/Firefox"
+export downloads="~/Downloads/firefox"
 export rockyou=/usr/share/wordlists/rockyou.txt
 
 ################### ALIASES ###################
 alias cpy="xclip -selection clipboard" # COPY TO CLIPBOARD
-alias 7z="7za" # 7ZIP
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" # DOTFILES 
-alias cme="crackmapexec"
-alias reload="source /home/kali/.zshrc"
-alias pwninit='pwninit --template-path ~/.config/pwninit_template.py; libcname=$(ls libc*); python3 -c "from pwnlib.libcdb import unstrip_libc; unstrip_libc('\''$libcname'\'')"'
-alias htbvpn='sudo openvpn /home/kali/ctf/htb/htb_EU_tcp.ovpn'
+alias reload="source ~/.zshrc"
+alias pwninit='pwninit --template-path ~/.config/pwninit_template.py; libcname=$(ls libc*) && python3 -c "from pwnlib.libcdb import unstrip_libc; unstrip_libc('\''$libcname'\'')"'
+alias vol3="docker run -v $(pwd):/ctf -it vol3"
+alias vol2="docker run -v $(pwd):/ctf -it vol2"
 
 ################### PATH ###################
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Windows/System32" # ADDS VSCODE TO PATH (WSL2)
-export PATH="/usr/local/volatility3:$PATH" # VOLATILITY 3
 export PATH="/home/kali/.local/bin:$PATH"
 export PATH="/home/kali/.cargo/bin:$PATH"
 
-
-################### OTHER #####################
-export TOOLS="/home/kali/ctf/htb/tools"
-
-#export PYENV_ROOT="$HOME/.pyenv"
-#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-
-# add Pulumi to the PATH
-export PATH=$PATH:$HOME/.pulumi/bin
-
-# fix time in tmux
-#sudo ntpdate ntp.ubuntu.com 1>/dev/null
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
